@@ -13,3 +13,17 @@ plt.imshow(blank_img)
 
 cv2.line(blank_img, (40,40), (450,40), (255,255,0), thickness=10)
 plt.imshow(blank_img)
+
+font = cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(blank_img, text="first text on image", org=(10,500), fontFace=font, fontScale=3, color=(255,255,255), thickness=3, lineType=cv2.LINE_AA)
+plt.imshow(blank_img)
+
+new_blank=np.zeros(shape=(512,512,3))
+plt.imshow(new_blank)
+
+verticies = np.array([ [100,100],[100,400],[400,400],[400,100] ],dtype=np.int32)
+pts=verticies.reshape((-1,1,2))
+
+cv2.polylines(new_blank,[pts],isClosed=True, color=(255,0,0), thickness=5)
+
+plt.imshow(new_blank)
